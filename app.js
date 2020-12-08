@@ -8,8 +8,11 @@ const APP_ID = '824c8e357d404308f22a1a742a7f31f4'
 ELEMENTS.ELEMENT_SEARCH_BUTTON.addEventListener('click', searchWeather);
 
 function searchWeather() {
-    const CITY_NAME = ELEMENTS.ELEMENT_SEARCHED_CITY.value.trim();
-    if (CITY_NAME.length == 0) {
+  // using trim feature in the event the user inputs white space
+  const CITY_NAME = ELEMENTS.ELEMENT_SEARCHED_CITY.value.trim();
+  // check if the input is empty
+  if (CITY_NAME.length == 0) {
+    ELEMENTS.ELEMENT_SEARCH_BUTTON.insertAdjacentHTML('afterend', '<div id="two">two</div>')
         return alert('Please enter a city name');
     }
     ELEMENTS.ELEMENT_LOADING_TEXT.style.display = 'block';
